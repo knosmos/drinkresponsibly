@@ -6,7 +6,7 @@ SIZE_W = 2 * 100
 SIZE_H = 6 * 100
 
 # load image
-img = cv2.imread("apriltag_test.jpg")
+img = cv2.imread("img/test/apriltag_test.jpg")
 img = cv2.resize(img, (0, 0), fx=0.15, fy=0.15)
 
 dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_36h11)

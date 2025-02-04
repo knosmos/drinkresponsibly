@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 # load the video
-video = cv2.VideoCapture("test2.mov")
+video = cv2.VideoCapture("img/test/test2.mov")
 
 _, background_frame = video.read()
 background_frame = cv2.cvtColor(background_frame, cv2.COLOR_BGR2GRAY)

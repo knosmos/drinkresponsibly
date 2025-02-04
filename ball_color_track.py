@@ -3,9 +3,11 @@ import numpy as np
 import time
 
 # load the video
-video = cv2.VideoCapture("test2.mov")
+video = cv2.VideoCapture("img/test/output.mp4")
 
 _, background_frame = video.read()
+_, background_frame = video.read()
+background_frame = cv2.resize(background_frame, (0, 0), fx=0.5, fy=0.5)
 background_frame = cv2.cvtColor(background_frame, cv2.COLOR_BGR2GRAY)
 
 # Detect feature points in background frame
@@ -24,6 +26,7 @@ while True:
     ret, frame = video.read()
     if not ret:
         break
+    frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # IMAGE STABILIZATION
@@ -129,4 +132,4 @@ while True:
     cv2.imshow("frame_subtracted", frame_subtracted)
     cv2.imshow("mask", mask)
     cv2.imshow("detection", frame)
-    time.sleep(0.05)
+    time.sleep(0.1)
