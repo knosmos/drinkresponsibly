@@ -7,6 +7,9 @@ SIZE_H = 6 * 100
 
 cap = cv2.VideoCapture(1)
 
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920//8)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080//8)
+
 while True:
     # load image
     ret, img = cap.read()
