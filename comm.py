@@ -13,7 +13,7 @@ for port, desc, hwid in sorted(ports):
 
 # If there is more than one port, ask user to choose
 if len(ports) > 1:
-    port = input("select port> ")
+    port = ""#input("select port> ")
     if port == "": port = sorted(ports)[0][0]
 else:
     ports = []

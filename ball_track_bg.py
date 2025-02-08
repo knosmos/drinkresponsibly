@@ -23,7 +23,7 @@ WARP_CORNERS = [
 p_matrix = cv2.getPerspectiveTransform(np.float32(CORNERS), np.float32(WARP_CORNERS))
 
 # load the video
-video = cv2.VideoCapture("img/test/output.mp4")
+video = cv2.VideoCapture("img/test/edges.mp4")
 
 _, background_frame = video.read()
 _, background_frame = video.read()

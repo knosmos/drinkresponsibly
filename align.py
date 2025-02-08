@@ -1,13 +1,15 @@
-SCALE = 2
-X_OFFSET = 0
+X1 = 35
+X2 = 200-145
 X_MIN = 0
 X_MAX = 34
-Y = 0
+SCALE = X_MAX/(200-X1-X2)
+X_OFFSET = X1
+Y = 475
 
 def convert(x):
-    if x < X_MIN or x > X_MAX:
-        return -1
-    return int((x - X_OFFSET) * SCALE)
+    r = int((x - X_OFFSET) * SCALE)
+    r = max(min(r, X_MAX), X_MIN)
+    return r
 
 def align(x1, y1, x2, y2):
     # get trajectory from x1, y1 to x2, y2 and calculate x position at y = Y
